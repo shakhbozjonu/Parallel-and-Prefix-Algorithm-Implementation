@@ -35,7 +35,30 @@ And the algorithm of this implementation:
     7. Copy the elements from the input array to the output array.
     8. Print the elements of the output array as the prefix sums.
 
-   ### 3.
+   ### 3. The code implements a parallel scan algorithm using multiple threads to compute the prefix sums of an input vector. It splits the computation into an up-sweep phase, where adjacent elements are combined, and a down-sweep phase, where values are updated and swapped to compute the final prefix sums. The algorithm utilizes the hardware concurrency to divide the work among multiple threads, improving the performance of the computation.
+   This is the algorithm of the program: 
+   
+   1. Create a function named "parallel_scan" that takes references to an input vector and an output vector as parameters.
+2. Calculate the size of the input vector and assign it to the variable "n".
+3. Divide the input vector into multiple segments based on the number of available hardware threads and assign the segment size to the variable "segment_size".
+4. Perform the up-sweep phase:
+    4.1. Iterate over the levels of the up-sweep phase from 0 to log2(n).
+    4.2. Divide the segments among the hardware threads.
+    4.3. For each segment, calculate the start and end indices based on the thread's ID.
+    4.4. Perform the scan operation within each segment by adding the value at (k + (1 << d) - 1) to the value at (k + (1 << (d + 1)) - 1).
+5. Set the last element of the input vector to 0.
+6. Perform the down-sweep phase:
+    6.1. Iterate over the levels of the down-sweep phase from log2(n) - 1 to 0.
+    6.2. Divide the segments among the hardware threads.
+    6.3. For each segment, calculate the start and end indices based on the thread's ID.
+    6.4. Perform the scan operation within each segment by swapping the values at (k + (1 << d) - 1) and (k + (1 << (d + 1)) - 1), and then updating the value at (k + (1 << (d + 1)) - 1) by adding the temporarily stored value.
+7. Copy the resulting values from the input vector to the output vector.
+8. Create the main function:
+    8.1. Create an input vector and initialize it with the given values.
+    8.2. Create an output vector with the same size as the input vector.
+    8.3. Call the "parallel_scan" function with the input and output vectors.
+    8.4. Print the resulting prefix sums.
+
 
 
     
