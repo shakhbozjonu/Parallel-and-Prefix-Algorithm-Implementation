@@ -36,8 +36,8 @@ And the algorithm of this implementation:
     8. Print the elements of the output array as the prefix sums.
 
    ### 3. The code implements a parallel scan algorithm using multiple threads (C++11 threads) to compute the prefix sums of an input vector. It splits the computation into an up-sweep phase, where adjacent elements are combined, and a down-sweep phase, where values are updated and swapped to compute the final prefix sums. The algorithm utilizes the hardware concurrency to divide the work among multiple threads, improving the performance of the computation.
-   This is the algorithm of the program: 
    
+   This is the algorithm of the program: 
    
    1. Create a function named "parallel_scan" that takes references to an input vector and an output vector as parameters.
 2. Calculate the size of the input vector and assign it to the variable "n".
