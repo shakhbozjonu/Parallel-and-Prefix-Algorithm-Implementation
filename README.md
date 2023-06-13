@@ -9,15 +9,11 @@ Here is the algorithm for this program:
        2.2. Start the inclusive scan operation from the beginning to the end of the input array.
        2.3. Store the results of the inclusive scan in the output array.
        2.4. Use the plus<> operator as the binary operation for the scan.
-
     3. Print the prefix sums from the output array.
        3.1. Iterate over each element in the output array.
        3.2. Print the element followed by a space.
-The inclusive_scan function takes an input array and a binary operation (in this case plus) and returns an array containing the result of the inclusive scan operation. In this example, we use addition as the binary operation.
-    
-    
- ###   2. The second implementetion completes a parallel scan algorithm to compute the prefix sums of an input array. It is excluse which means it computes computes the sum of all elements up to, but not including, the current element. It performs an up-sweep phase, where adjacent elements are added together in a binary tree fashion, and a down-sweep phase, where elements are rearranged to propagate the sum values down the tree. The result is stored in the output array and printed as the prefix sums of the input array.
-    
+The inclusive_scan function takes an input array and a binary operation (in this case plus) and returns an array containing the result of the inclusive scan operation. In this example, we use addition as the binary operation.  
+ ###   2. The second implementetion completes a parallel scan algorithm to compute the prefix sums of an input array. It is excluse which means it computes computes the sum of all elements up to, but not including, the current element. It performs an up-sweep phase, where adjacent elements are added together in a binary tree fashion, and a down-sweep phase, where elements are rearranged to propagate the sum values down the tree. The result is stored in the output array and printed as the prefix sums of the input array.    
 And the algorithm of this implementation:
     1. Initialize the input array and output array.
     2. Determine the size of the input array (n).
@@ -35,7 +31,6 @@ And the algorithm of this implementation:
        Update input[k + 2^(d+1) - 1] by adding the stored temporary variable (t).
     7. Copy the elements from the input array to the output array.
     8. Print the elements of the output array as the prefix sums.
-    
    ### 3.
 
 
