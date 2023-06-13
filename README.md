@@ -1,6 +1,6 @@
 # Parallel-and-Prefix-Algorithm-Implementation
 
-1. The first code we provided, which is Inclisive Scann This performs an inclusive scan on the input array [3 1 7 0 4 1 6 3] using addition as the binary operation. The result is stored in the output array and printed to the console. The output should be [3 4 11 11 15 16 22 25].
+    1. The first code we provided, which is Inclisive Scann This performs an inclusive scan on the input array [3 1 7 0 4 1 6 3] using addition as the binary operation. The result is stored in the output array and printed to the console. The output should be [3 4 11 11 15 16 22 25].
 
 Here is the pseudocode for this algorithm:
 
@@ -14,4 +14,6 @@ output = inclusive_scan(input, plus)
 for x in output:
     print x
     
-    2. sfgrq
+The inclusive_scan function takes an input array and a binary operation (in this case plus) and returns an array containing the result of the inclusive scan operation. In this example, we use addition as the binary operation.
+    
+    2. The second
